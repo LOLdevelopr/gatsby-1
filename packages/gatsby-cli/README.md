@@ -32,14 +32,33 @@ You can also use the `package.json` script variant of these commands, typically 
 
 ### `new`
 
-`gatsby new gatsby-site`
+`$ gatsby new [site-name] [starter-pack]`
 
-See the [Gatsby starters docs](https://www.gatsbyjs.org/docs/gatsby-starters/)
-for more.
+#### Arguments
+
+- **`site-name` *(required)* :**  Your Gatsby site name along with the path should be pass here`
+
+- **`starter-pack` *(optional)* :**  Mention the gatsby starter pack here. 
+  See the [Gatsby starters docs](https://www.gatsbyjs.org/docs/gatsby-starters/) for more.   
+  `Default` starter pack is [gatsby-starter-default](https://github.com/gatsbyjs/gatsby-starter-default)
+
+> **NOTE :** Dont pass `.` or `./` or ` ` *(space)*  in the `site-name`. It will throw error of specifying name and it will stop the operation
+
+#### Examples
+
+- `$ gatsby new MY_AWESOME_GATSBY_SITE` : it will create a gatsby site with `MY_AWESOME_GATSBY_SITE` name in the current working directory using the default starter
+
+- `$ gatsby new MY_AWESOME_GATSBY_BLOG_SITE https://github.com/gatsbyjs/gatsby-starter-blog` : It will create a gatbsy site with name `MY_AWESOME_GATSBY_BLOG_SITE` and using [gatsby-starter-blog](https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-blog/) starter pack
+
+- `$ gatsby new   https://github.com/gatsbyjs/gatsby-starter-blog` : It will result in error and will stop the command with a message : *It looks like you forgot to add a name for your new project. Try running instead "gatsby new new-gatsby-project https://github.com/gatsbyjs/gatsby-starter-blog"*
+#### Interactive prompting
+
+If you leave all the both of the argument, then CLI will then run a interactive shell asking for these inputs.
+
 
 ### `develop`
 
-At the root of a Gatsby app run `gatsby develop` to start the Gatsby
+At the root of a Gatsby app run `$ gatsby develop` to start the Gatsby
 development server.
 
 #### Options
@@ -56,7 +75,7 @@ to find out how you can set up an HTTPS development server using Gatsby.
 
 ### `build`
 
-At the root of a Gatsby app run `gatsby build` to do a production build of a site.
+At the root of a Gatsby app run `$ gatsby build` to do a production build of a site.
 
 #### Options
 
@@ -69,7 +88,7 @@ At the root of a Gatsby app run `gatsby build` to do a production build of a sit
 
 ### `serve`
 
-At the root of a Gatsby app run `gatsby serve` to serve the production build of the site
+At the root of a Gatsby app run `$ gatsby serve` to serve the production build of the site
 
 #### Options
 
@@ -82,7 +101,7 @@ At the root of a Gatsby app run `gatsby serve` to serve the production build of 
 
 ### `clean`
 
-At the root of a Gatsby app run `gatsby clean` to wipe out the cache (`.cache` folder) and `public` directories. This is useful **as a last resort** when your local project seems to have issues or content does not seem to be refreshing. Issues this may fix commonly include:
+At the root of a Gatsby app run `$ gatsby clean` to wipe out the cache (`.cache` folder) and `public` directories. This is useful **as a last resort** when your local project seems to have issues or content does not seem to be refreshing. Issues this may fix commonly include:
 
 - Stale data, e.g. this file/resource/etc. isn't appearing
 - GraphQL error, e.g. this GraphQL resource _should_ be present but is not
@@ -95,13 +114,13 @@ Run commands pertaining to gatsby plugins.
 
 #### `docs`
 
-`gatsby plugin docs`
+`$ gatsby plugin docs`
 
 Directs you to documentation about using and creating plugins.
 
 ### `info`
 
-At the root of a Gatsby site run `gatsby info` to get helpful environment information which will be required when reporting a bug.
+At the root of a Gatsby site run `$ gatsby info` to get helpful environment information which will be required when reporting a bug.
 
 #### Options
 
